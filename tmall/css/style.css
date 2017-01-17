@@ -56,9 +56,13 @@ main {
     height: 100px;
     background: url(../img/guarantee.jpg) no-repeat;
 }
+
+.detail {
+    padding-top: 20px;
+}
 .detail dl {
     width: 200px;
-    padding-left: 15px;
+    padding-left: 50px;
     float: left;
 }
 dl a {
