@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Sample Post</title>
+    <title>Javascript 101</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>读书笔记</h1>
+                        <h1>Javascript 101</h1>
                         <h2 class="subheading">Types, equality, conversion</h2>
                         <span class="meta">Posted by <a href="#">CoCo</a> on March 01, 2017</span>
                     </div>
@@ -88,25 +88,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>JS数据类型: 字符串、数字、布尔、数组、对象、Null、Undefined</p>
 
-                    <p>基本类型：字符串、数字、布尔</p>
-
+                    <p>Javascript 数据类型: 字符串、数字、布尔、数组、对象、Null、Undefined</p>
                     <p>primitives: numbers, strings, booleans</p>
-
                     <p>objects: document, math, element, car, dog, .... </p>
+                    <hr>
 
-                    <h2 class="section-heading">关于undefined</h2>
+                    <h2 class="section-heading">undefined</h2>
                 
-                    <p>没有 return 语句，函数返回undefined</p>
-                    <p>变量没被赋值，value为undefined</p>
-                    <p>稀疏数组不存在的项, value为undefined </p>
-                    <p>不存在 / 已删除的property, value为undefined</p>
-                    <p>创建对象时, 不能将property设为undefined </p>
-       
-                    <h2 class="section-heading">关于typeof</h2>
-<P>
-                    <pre>var test1 = [];
+                    <p>没有 return 语句，函数返回undefined；</p>
+                    <p>变量没被赋值，value为undefined；</p>
+                    <p>稀疏数组不存在的项, value为undefined； </p>
+                    <p>不存在 / 已删除的property, value为undefined；</p>
+                    <p>创建对象时, 不能将property设为undefined； </p>
+
+                    <hr>       
+                    <h2 class="section-heading">typeof</h2>
+
+                    <P><pre>var test1 = [];
 var test2 = ["abcdef", 123]; 
 var test3 = null;
 function test4(){
@@ -121,31 +120,43 @@ typeof test2: object
 typeof test3: object
 typeof test4: function
 typeof test5: number</pre></P>
-                       
-                     <h2 class="section-heading">NaN</h2>
+
+
+                    <hr>
+                    <h2 class="section-heading">NaN</h2>
                 
-                    <p> “Not a Number”, 非数字值</p>
-                    <p>NaN != NaN 自己不等于自己</p>
-                    <p>使用 isNaN() 来判断一个值是否是数字 </p>
+                    <p> “Not a Number”, 非数字值；</p>
+                    <p>NaN != NaN 自己不等于自己；</p>
+                    <p>使用 isNaN() 来判断一个值是否是数字； </p>
+                
+                    <hr>
+                    <h2 class="section-heading">==</h2>
+                
+                    <p>类型相同时，比较值，相同则true；</p>
+                    <p>类型不同时，转换成同类型再比较；
+                        <ul>
+                            <li>字符串和数字，将字符串转换成数字后比较；</li>
+                            <li>布尔值和其它，true 转换成 1 ，false 转成 0，再比较；</li>
+                            <li>undefined == null 为true；</li>
+                            <li>0 == "" 为true，空字符串会转成数字 0</li>
+                        </ul>
+                    </p>
+                    <p>没有 <== 和 >== , 只有 <= 和 >= ； </p>
+                    <p> 就如 === 比 ==严格, !== 比 != 严格； </p>
+                    <pre>blow all true:
+
+"a" < "b"  //按字母表顺序
+
+"12" < 123   //字符转数字，再比较
+
+"A" < "a"   //不是大写就大啊喂，查下"Unicode" O(∩_∩)O~
+                    </pre>
+
+
                     <hr>
                     <p> Infinity minus Infinity equals.... wait for it........ NaN. </p>
-                    <p> </p>
 
-<!--
-                    <h2 class="section-heading">Reaching for the Stars</h2>
 
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>-->
                 </div>
             </div>
         </div>
@@ -155,39 +166,7 @@ typeof test5: number</pre></P>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-                </div>
-            </div>
-        </div>
+ 
     </footer>
 
     <!-- jQuery -->
