@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Javascript 101</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">What Have You Learned Today?</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Javascript 101</h1>
+                        <h2 class="subheading">Types, equality, conversion</h2>
+                        <span class="meta">Posted by <a href="#">CoCo</a> on March 01, 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <p>Javascript 数据类型: 字符串、数字、布尔、数组、对象、Null、Undefined</p>
+                    <p>The primitives are: numbers, strings, booleans, null and undefined. 其它都是对象.</p>
+       
+                    <hr>
+
+                    <h2 class="section-heading">undefined</h2>
+
+                    <p>undefined means that a variable (or property or array item) hasn’t yet been initialized to a value.</p>
+                
+                    <p>没有 return 语句，函数返回undefined；</p>
+                    <p>变量没被赋值，value为undefined；</p>
+                    <p>稀疏数组不存在的项, value为undefined； </p>
+                    <p>不存在 / 已删除的property, value为undefined；</p>
+                    <p>创建对象时, 不能将property设为undefined； </p>
+
+                    <hr>       
+                    <h2 class="section-heading">typeof</h2>
+
+                    <P><pre>var test1 = [];
+var test2 = ["abcdef", 123]; 
+var test3 = null;
+function test4(){
+	return "abcdef"
+}; 
+var test5 = 0 / 0;
+
+//以上
+
+typeof test1: object
+typeof test2: object
+typeof test3: object
+typeof test4: function
+typeof test5: number</pre></P>
+
+
+                    <hr>
+                    <h2 class="section-heading">NaN</h2>
+                
+                    <p> “Not a Number”, 非数字值；</p>
+                    <p>NaN != NaN 自己不等于自己；</p>
+                    <p>使用 isNaN() 来判断一个值是否是数字； </p>
+                
+                    <hr>
+                    <h2 class="section-heading">==</h2>
+                
+                    <p>类型相同时，比较值，相同则true；</p>
+                    <p>类型不同时，转换成同类型再比较；
+                        <ul>
+                            <li>字符串和数字，将字符串转换成数字后比较；</li>
+                            <li>布尔值和其它，true 转换成 1 ，false 转成 0，再比较；</li>
+                            <li>undefined == null 为true；</li>
+                            <li>0 == "" 为true，空字符串会转成数字 0</li>
+                        </ul>
+                    </p>
+                    <p>没有 <== 和 >== , 只有 <= 和 >= ； </p>
+                    <p> 就如 === 比 ==严格, !== 比 != 严格； </p>
+                    <pre>blow all true:
+
+"a" < "b"  //按字母表顺序
+
+"12" < 123   //字符转数字，再比较
+
+"A" < "a"   //不是大写就大啊喂，查下"Unicode" O(∩_∩)O~
+                    </pre>
+
+  <hr>
+                    <h2 class="section-heading">String Soup</h2>
+
+                    <pre>常用方法
+toLowerCase, toUpperCase
+indexOf, 
+lastIndexOf
+CharAt   //和[i]有什么区别？
+substring
+slice
+match
+replace
+concat
+trim </pre>
+ <hr>
+                    <h2 class="section-heading">falsey 和 truthy</h2>
+                
+                    <p>falsey值: undefined, null, 0, "" (空字符串), NaN, false. <br>其它都是truthy.</p>
+
+
+                    <hr>
+                    <p> Infinity minus Infinity equals.... wait for it........ NaN. </p>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+ 
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
