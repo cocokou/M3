@@ -1,0 +1,19 @@
+
+    *{
+        color: #555;
+     }
+    h1 {
+        text-align: center;
+    }
+    blockquote {
+        font-size: 1.1rem;
+        border: 1px #aaa dotted;
+        padding: 15px;   
+        border-radius: 6px;
+ 
+    }
+    span {
+        color: #999;
+        font-style: italic;
+        font-size: 1rem;
+    }
