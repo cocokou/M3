@@ -52,8 +52,43 @@ addDecade(age);
 console.log(age);   // 这里age并没有改变，永远18岁，没毛病</pre> </p>
                     <p> 函数内参数的变化只存在函数内，不会影响传递值给它的那位。 </p>
                  
-             
-
+                    <h2 class="section-heading">return</h2>
+                
+                    <p>执行到return语句时，会退出函数，return之后的语句不再执行</p>
+         
+ <h2 class="section-heading">阶乘 (factorials)</h2>
+                            
+                    <p><pre>
+    function clunk(times) {
+      var num = times;
+      while (num > 0) {
+        display("clunk");
+        num = num - 1;
+      }
+    }
+    function thingamajig(size) {
+      var facky = 1;
+      clunkCounter = 0;
+      if (size == 0) {
+        display("clank");
+      } else if (size == 1) {
+        display("thunk");
+      } else {
+        while (size > 1) {
+          facky = facky * size;
+          size = size - 1;
+        }
+        clunk(facky);
+      }
+    }
+    function display(output) {
+      console.log(output);
+      clunkCounter = clunkCounter + 1;
+    }
+    var clunkCounter = 0;
+    thingamajig(5);
+    console.log(clunkCounter);
+  </pre> </p>
 
                 </div>
             </div>
